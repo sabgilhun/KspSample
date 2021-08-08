@@ -1,4 +1,5 @@
 import org.sabgil.Libraries
+import org.sabgil.Modules
 
 plugins {
     `java-library`
@@ -6,5 +7,7 @@ plugins {
 }
 
 dependencies {
+    implementation(project(Modules.annotation))
     implementation(Libraries.kotlinStdLib)
+    implementation(Libraries.ksp)
 }

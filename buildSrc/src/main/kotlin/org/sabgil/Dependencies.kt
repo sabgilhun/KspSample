@@ -39,6 +39,7 @@ object Libraries {
         const val ktx = "1.6.0"
         const val constraintLayout = "2.1.0"
         const val material = "1.4.0"
+        const val ksp = "1.5.21-1.0.0-beta06"
     }
 
     const val kotlinStdLib =
@@ -51,6 +52,8 @@ object Libraries {
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val materialComponents =
         "com.google.android.material:material:${Versions.material}"
+    const val ksp =
+        "com.google.devtools.ksp:symbol-processing-api:${Versions.ksp}"
 }
 
 object TestLibraries {

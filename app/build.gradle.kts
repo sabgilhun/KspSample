@@ -2,9 +2,11 @@ import org.sabgil.AndroidSdk
 import org.sabgil.Libraries
 import org.sabgil.TestLibraries
 import org.sabgil.Version
+import org.sabgil.Modules
 
 plugins {
     id("com.android.application")
+    id("com.google.devtools.ksp") version "1.5.21-1.0.0-beta06"
     kotlin("android")
 }
 
@@ -36,6 +38,9 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.annotation))
+    ksp(project(Modules.processor))
+
     implementation(Libraries.kotlinStdLib)
     implementation(Libraries.appCompat)
     implementation(Libraries.ktxCore)
