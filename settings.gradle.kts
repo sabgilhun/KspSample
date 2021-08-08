@@ -1,4 +1,2 @@
 rootProject.name = "KspSample"
-include(":app")
-include(":annotation")
-include(":processor")
+include(":app", ":annotation", ":processor")
