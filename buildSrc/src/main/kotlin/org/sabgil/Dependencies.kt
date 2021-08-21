@@ -2,6 +2,7 @@ package org.sabgil
 
 
 const val kotlinVersion = "1.5.21"
+const val kspVersion = "1.5.21-1.0.0-beta07"
 
 object GradlePlugin {
     private object Version {
@@ -13,6 +14,9 @@ object GradlePlugin {
 
     const val kotlinGradlePlugin =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+
+    const val kspGradlePlugin =
+        "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$kspVersion"
 }
 
 object AndroidSdk {
@@ -39,7 +43,6 @@ object Libraries {
         const val ktx = "1.6.0"
         const val constraintLayout = "2.1.0"
         const val material = "1.4.0"
-        const val ksp = "1.5.21-1.0.0-beta06"
     }
 
     const val kotlinStdLib =
@@ -53,7 +56,7 @@ object Libraries {
     const val materialComponents =
         "com.google.android.material:material:${Versions.material}"
     const val ksp =
-        "com.google.devtools.ksp:symbol-processing-api:${Versions.ksp}"
+        "com.google.devtools.ksp:symbol-processing-api:$kspVersion"
 }
 
 object TestLibraries {

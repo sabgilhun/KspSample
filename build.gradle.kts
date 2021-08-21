@@ -2,10 +2,12 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
         classpath(org.sabgil.GradlePlugin.androidGradlePlugin)
         classpath(org.sabgil.GradlePlugin.kotlinGradlePlugin)
+        classpath(org.sabgil.GradlePlugin.kspGradlePlugin)
     }
 }
 
@@ -13,6 +15,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
+        gradlePluginPortal()
     }
 }

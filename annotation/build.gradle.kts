@@ -1,8 +1,12 @@
 import org.sabgil.Libraries
 
 plugins {
-    `java-library`
     kotlin("jvm")
+}
+
+repositories {
+    mavenCentral()
+    google()
 }
 
 dependencies {

@@ -1,4 +1,4 @@
 package org.sabgil.annotation
 
-class MyAnnotation {
-}
+@Target(AnnotationTarget.CLASS)
+annotation class MyAnnotation

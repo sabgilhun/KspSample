@@ -1,13 +1,9 @@
-import org.sabgil.AndroidSdk
-import org.sabgil.Libraries
-import org.sabgil.TestLibraries
-import org.sabgil.Version
-import org.sabgil.Modules
+import org.sabgil.*
 
 plugins {
     id("com.android.application")
-    id("com.google.devtools.ksp") version "1.5.21-1.0.0-beta06"
-    kotlin("android")
+    id("com.google.devtools.ksp")
+    id("kotlin-android")
 }
 
 android {
@@ -24,16 +20,27 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
-            minifyEnabled(false)
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+        getByName("debug") {
+            sourceSets {
+                getByName("main") {
+                    java.srcDir(File("build/generated/ksp/debug/kotlin"))
+                }
+            }
         }
+//        getByName("release") {
+//            minifyEnabled(false)
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
+//        }
+    }
+    compileOptions {
+        sourceCompatibility(JavaVersion.VERSION_1_8)
+        targetCompatibility(JavaVersion.VERSION_1_8)
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
