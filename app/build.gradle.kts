@@ -19,21 +19,20 @@ android {
         testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
     }
 
-    buildTypes {
-        getByName("debug") {
-            sourceSets {
-                getByName("main") {
-                    java.srcDir(File("build/generated/ksp/debug/kotlin"))
-                }
-            }
+    sourceSets {
+        getByName("main") {
+            java.srcDir(File("build/generated/ksp/debug/kotlin"))
         }
-//        getByName("release") {
-//            minifyEnabled(false)
-//            proguardFiles(
-//                getDefaultProguardFile("proguard-android-optimize.txt"),
-//                "proguard-rules.pro"
-//            )
-//        }
+    }
+
+    buildTypes {
+        getByName("release") {
+            minifyEnabled(false)
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
     }
     compileOptions {
         sourceCompatibility(JavaVersion.VERSION_1_8)
